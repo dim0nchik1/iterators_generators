@@ -12,10 +12,10 @@ export default class Team {
             throw new Error("Unknown player");
         }
     }
-    [Symbol.iterator]() {
+    *[Symbol.iterator]() {
         let current = 0
         const {players, numPlayers} = this;
-        return {
+        yield {
             next() {
                 if (current < numPlayers) {
                     return {
